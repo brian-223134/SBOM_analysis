@@ -1,0 +1,108 @@
+{
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.4",
+    "serialNumber": "urn:uuid:bc89bbfc-5db7-41e3-1358-28888bbbb1ac",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2025-12-29T01:48:07.851696+00:00",
+      "authors": [
+        {
+          "name": "IoTcube - https://iotcube.net"
+        }
+      ],
+      "component": {
+        "group": "",
+        "name": "back",
+        "version": "",
+        "type": "application",
+        "bom-ref": "pkg:generic/back",
+        "purl": "pkg:generic/back"
+      }
+    },
+    "dependencies": [
+      {
+        "ref": "back",
+        "dependsOn": [
+          "pokeapi 2.7.0",
+          "docker-django-example 0.9.0",
+          "django-crispy-forms 0.5.0",
+          "django-s3direct v2.0.2"
+        ]
+      }
+    ],
+    "components": [
+      {
+        "group": "pokeapi",
+        "name": "wsgi",
+        "version": "0.0.0-5b2fb0d6597f",
+        "type": "file",
+        "bom-ref": "pkg:generic/pokeapi/wsgi@0.0.0-5b2fb0d6597f#project/config/wsgi.py",
+        "purl": "pkg:generic/pokeapi/wsgi@0.0.0-5b2fb0d6597f#project/config/wsgi.py",
+        "hashes": [
+          {
+            "alg": "MD5",
+            "content": "5b2fb0d6597f07f8c23e69682ff967de"
+          }
+        ]
+      },
+      {
+        "group": "docker-django-example",
+        "name": "asgi",
+        "version": "0.0.0-e1841c5a12ad",
+        "type": "file",
+        "bom-ref": "pkg:generic/docker-django-example/asgi@0.0.0-e1841c5a12ad#project/config/asgi.py",
+        "purl": "pkg:generic/docker-django-example/asgi@0.0.0-e1841c5a12ad#project/config/asgi.py",
+        "hashes": [
+          {
+            "alg": "MD5",
+            "content": "e1841c5a12ad54ee9f0de7a51f41d52d"
+          }
+        ]
+      },
+      {
+        "group": "docker-django-example",
+        "name": "manage",
+        "version": "0.0.0-61d78bdb7625",
+        "type": "file",
+        "bom-ref": "pkg:generic/docker-django-example/manage@0.0.0-61d78bdb7625#project/manage.py",
+        "purl": "pkg:generic/docker-django-example/manage@0.0.0-61d78bdb7625#project/manage.py",
+        "hashes": [
+          {
+            "alg": "MD5",
+            "content": "61d78bdb7625cdcc5e71e7f37e20aa4b"
+          }
+        ]
+      },
+      {
+        "group": "django-crispy-forms",
+        "name": "models",
+        "version": "0.0.0-81e8a73b2f73",
+        "type": "file",
+        "bom-ref": "pkg:generic/django-crispy-forms/models@0.0.0-81e8a73b2f73#project/chatbots/models.py",
+        "purl": "pkg:generic/django-crispy-forms/models@0.0.0-81e8a73b2f73#project/chatbots/models.py",
+        "hashes": [
+          {
+            "alg": "MD5",
+            "content": "81e8a73b2f730546c1035924ad1e8125"
+          }
+        ]
+      },
+      {
+        "group": "django-s3direct",
+        "name": "tests",
+        "version": "0.0.0-f0aee1662c3a",
+        "type": "file",
+        "bom-ref": "pkg:generic/django-s3direct/tests@0.0.0-f0aee1662c3a#project/pdf_figures/tests.py",
+        "purl": "pkg:generic/django-s3direct/tests@0.0.0-f0aee1662c3a#project/pdf_figures/tests.py",
+        "hashes": [
+          {
+            "alg": "MD5",
+            "content": "f0aee1662c3a7fd2fd304e208028465c"
+          }
+        ]
+      }
+    ]
+  },
+  "file_count": 5
+}

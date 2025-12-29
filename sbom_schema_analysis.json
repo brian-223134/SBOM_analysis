@@ -1,0 +1,145 @@
+{
+    "summary": {
+        "total_files": 3,
+        "directory": "./SBOM_json"
+    },
+    "files": {
+        "CMDF_back_cyclonedx.json": {
+            "bomFormat": {
+                "type": "str",
+                "sample_value": "CycloneDX"
+            },
+            "specVersion": {
+                "type": "str",
+                "sample_value": "1.6"
+            },
+            "serialNumber": {
+                "type": "str",
+                "sample_value": "urn:uuid:1bc361c9-0951-424e-ae33-3197f2f294f1"
+            },
+            "version": {
+                "type": "int",
+                "sample_value": "1"
+            },
+            "metadata": {
+                "type": "dict",
+                "sub_keys": [
+                    "timestamp",
+                    "tools",
+                    "authors",
+                    "lifecycles",
+                    "component",
+                    "properties"
+                ]
+            },
+            "components": {
+                "type": "list",
+                "item_count": 51,
+                "item_example_keys": [
+                    "group",
+                    "name",
+                    "version",
+                    "description",
+                    "purl",
+                    "type",
+                    "bom-ref",
+                    "properties",
+                    "evidence"
+                ]
+            },
+            "services": {
+                "type": "list",
+                "item_count": 0
+            },
+            "dependencies": {
+                "type": "list",
+                "item_count": 52,
+                "item_example_keys": [
+                    "ref",
+                    "dependsOn"
+                ]
+            },
+            "annotations": {
+                "type": "list",
+                "item_count": 1,
+                "item_example_keys": [
+                    "bom-ref",
+                    "subjects",
+                    "annotator",
+                    "timestamp",
+                    "text"
+                ]
+            }
+        },
+        "CMDF_back_Github.json": {
+            "spdxVersion": {
+                "type": "str",
+                "sample_value": "SPDX-2.3"
+            },
+            "dataLicense": {
+                "type": "str",
+                "sample_value": "CC0-1.0"
+            },
+            "SPDXID": {
+                "type": "str",
+                "sample_value": "SPDXRef-DOCUMENT"
+            },
+            "name": {
+                "type": "str",
+                "sample_value": "com.github.CMDF/back"
+            },
+            "documentNamespace": {
+                "type": "str",
+                "sample_value": "https://spdx.org/spdxdocs/protobom/0c756acb-f387-4"
+            },
+            "creationInfo": {
+                "type": "dict",
+                "sub_keys": [
+                    "creators",
+                    "created"
+                ]
+            },
+            "packages": {
+                "type": "list",
+                "item_count": 52,
+                "item_example_keys": [
+                    "name",
+                    "SPDXID",
+                    "versionInfo",
+                    "downloadLocation",
+                    "filesAnalyzed",
+                    "licenseConcluded",
+                    "copyrightText",
+                    "externalRefs"
+                ]
+            },
+            "relationships": {
+                "type": "list",
+                "item_count": 52,
+                "item_example_keys": [
+                    "spdxElementId",
+                    "relatedSpdxElement",
+                    "relationshipType"
+                ]
+            }
+        },
+        "CMDF_back_Hatbom.json": {
+            "sbom": {
+                "type": "dict",
+                "sub_keys": [
+                    "bomFormat",
+                    "specVersion",
+                    "serialNumber",
+                    "version",
+                    "metadata",
+                    "dependencies",
+                    "components"
+                ]
+            },
+            "file_count": {
+                "type": "int",
+                "sample_value": "5"
+            }
+        }
+    }
+}
