@@ -211,3 +211,7 @@ __marimo__/
 *.xlsm
 *.xlsb
 *.xls
+
+# html files
+*.html
+*.htm
