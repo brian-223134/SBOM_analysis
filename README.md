@@ -6,7 +6,7 @@
 
 - [sbom_analyze.py](sbom_analyze.py): Recursively extract package/version pairs from all JSONs in SBOM_json, classify status (Unique, Consistent, Conflict), and output Excel/JSON reports under result/analysis.
 - [dependency_visualize.py](dependency_visualize.py): Build an interactive PyVis dependency graph from a selected SBOM JSON and save it to result/dependency.
-- [field_extractor.py](field_extractor.py): Summarize top-level schema fields across SBOM JSONs and write the consolidated view to result/field.
+- [field_schema_extractor.py](field_schema_extractor.py): Summarize top-level schema fields across SBOM JSONs and write the consolidated view to result/field.
 
 ## Directory Structure
 
