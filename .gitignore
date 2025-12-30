@@ -218,3 +218,7 @@ __marimo__/
 
 # json files
 *.json
+secrets.json
+
+# ai directory (for AI-related files)
+custom_ai/
