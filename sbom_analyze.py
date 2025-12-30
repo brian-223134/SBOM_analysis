@@ -2,7 +2,10 @@ import json
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
-from collections import Counter
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+RESULT_DIR = os.path.join(BASE_DIR, "result")
+RESULT_SUBDIR = os.path.join(RESULT_DIR, "analysis")
 
 def extract_packages_heuristically(data):
     """JSON 구조에 상관없이 패키지명과 버전을 재귀적으로 추출"""
@@ -65,9 +68,12 @@ def analyze_sbom_directory(directory_path):
         analysis_results.append(row)
     return analysis_results, all_files
 
-def save_to_excel(results, output_file="SBOM_Analysis_Report.xlsx"):
+def save_to_excel(results, output_file=None):
     """결과를 여러 시트가 포함된 엑셀 파일로 저장"""
     df = pd.DataFrame(results)
+    if output_file is None:
+        output_file = os.path.join(RESULT_SUBDIR, "SBOM_Analysis_Report.xlsx")
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
     
     with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
         # 시트 1: 전체 패키지 매핑 리스트
@@ -102,6 +108,7 @@ def visualize_results(results):
 
 if __name__ == "__main__":
     DIR_PATH = "./SBOM_json" # JSON 파일들이 위치한 폴더 경로
+    os.makedirs(RESULT_DIR, exist_ok=True)
     
     if os.path.exists(DIR_PATH):
         analysis_data, file_list = analyze_sbom_directory(DIR_PATH)
@@ -110,7 +117,8 @@ if __name__ == "__main__":
         save_to_excel(analysis_data)
         
         # 2. JSON 결과 저장 (백업용)
-        with open("analysis_result.json", "w", encoding="utf-8") as jf:
+        json_output_path = os.path.join(RESULT_SUBDIR, "analysis_result.json")
+        with open(json_output_path, "w", encoding="utf-8") as jf:
             json.dump(analysis_data, jf, indent=2, ensure_ascii=False)
             
         # 3. 시각화 출력

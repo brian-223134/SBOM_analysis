@@ -2,6 +2,10 @@ import json
 import os
 from pyvis.network import Network
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+RESULT_DIR = os.path.join(BASE_DIR, "result")
+RESULT_SUBDIR = os.path.join(RESULT_DIR, "dependency")
+
 def get_sbom_files(directory):
     """지정한 디렉토리 내의 json 파일 목록을 반환합니다."""
     if not os.path.exists(directory):
@@ -61,7 +65,8 @@ def visualize_with_pyvis(file_path):
     # 5. UI 제어판 추가 (브라우저에서 직접 물리 법칙이나 색상을 튜닝할 수 있음)
     # net.show_buttons(filter_=['physics']) # 주석을 해제하면 브라우저에서 설정 조절 가능
 
-    output_file = "sbom_dependency_graph.html"
+    output_file = os.path.join(RESULT_SUBDIR, "sbom_dependency_graph.html")
+
     net.show(output_file, notebook=False)
     print(f"\n 시각화 완료! 브라우저에서 '{output_file}' 파일을 확인하세요.")
 

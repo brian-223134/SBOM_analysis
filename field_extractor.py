@@ -1,10 +1,18 @@
 import json
 import os
 
-def analyze_and_export_schema(directory_path, output_file="sbom_schema_analysis.json"):
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+RESULT_DIR = os.path.join(BASE_DIR, "result")
+RESULT_SUBDIR = os.path.join(RESULT_DIR, "field")
+
+def analyze_and_export_schema(directory_path, output_file=None):
     if not os.path.exists(directory_path):
         print(f"[!] 경로를 찾을 수 없습니다: {directory_path}")
         return
+
+    if output_file is None:
+        output_file = os.path.join(RESULT_SUBDIR, "sbom_schema_analysis.json")
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
 
     files = [f for f in os.listdir(directory_path) if f.endswith('.json')]
     
