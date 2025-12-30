@@ -14,7 +14,7 @@
 - result/
   - analysis/ — Package inventory reports (JSON + Excel).
   - dependency/ — Interactive dependency graph HTML.
-  - field/ — Schema summary JSON.
+  - field/ — Schema summary JSON. It serves SBOM fields metadata which includes fields, number of data in each field.
 - lib/ — Frontend assets (PyVis dependencies and UI libraries).
 - requirements.txt — Python dependencies.
 
@@ -41,4 +41,4 @@ uv pip install -r requirements.txt
 
 - Package analysis report: `python sbom_analyze.py`
 - Dependency graph: `python dependency_visualize.py`
-- Field/schema summary: `python field_extractor.py`
+- Field/schema summary: `python field_schema_extractor.py`
