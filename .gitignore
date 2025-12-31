@@ -222,3 +222,6 @@ secrets.json
 
 # ai directory (for AI-related files)
 custom_ai/
+
+# db directory (for database files)
+SBOM_info/vectordb/
